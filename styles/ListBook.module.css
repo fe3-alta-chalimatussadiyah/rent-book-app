@@ -1,0 +1,9 @@
+.katuBody{
+  display: flex;
+  flex: row !important;
+}
+
+.kartu {
+  border: none !important;
+  width: 20%;
+}

@@ -1,0 +1,53 @@
+.container-fluid {
+  height: 100%;
+  width: 100%;
+  background-color: #aaa !importants;
+  /* background-image: url(../assets/undraw_booked_re_vtod.svg); */
+}
+
+.btn, .login {
+  width: 350px;
+}
+
+.judulLogin {
+  margin-top: 25px;
+  text-align: center;
+}
+
+/*
+span {
+  color: #2F2E41;
+  font-weight: bold;
+} */
+
+/* .btn-primary,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+  background-color: #3F3D56 !important;
+  border-color: #3F3D56 !important;
+  color: #C8C8E2;
+}
+
+.btn-primary:hover {
+  background-color: #C8C8E2 !important;
+  border-color: #3F3D56 !important;
+  color: #3F3D56;
+}
+
+textarea:focus,
+input:focus,
+input[type]:focus,
+.uneditable-input:focus {
+  border-color: #C8C8E2;
+  box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 8px #C8C8E2;
+  outline: 0 none !important;
+}
+
+.load {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  text-align: center;
+} */
