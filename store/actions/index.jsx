@@ -1,8 +1,5 @@
-import { findAllBook, setListBook } from "./findAllBook";
+import { setListBook } from "./findAllBook";
 
-const allStore = {
-  findAllBook,
-  setListBook,
-}
+const allStore = { setListBook }
 
 export default allStore;
