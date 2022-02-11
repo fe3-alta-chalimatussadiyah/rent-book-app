@@ -26,8 +26,7 @@ function ListBook() {
       <Card.Body className="d-flex flex-column">
         <Card.Title>{el.title}</Card.Title>
       <Button variant="danger" style={{width: '120px'}} className="mt-auto"
-      onClick={() => {router.push(`/books/${i}`)
-      }}>
+      onClick={() => {router.push(`/books/${el.id}`)}}>
       Details
       </Button>
       </Card.Body>

@@ -96,10 +96,7 @@ function DetailBook() {
         </Card.Text>
         <div className="mt-auto d-flex flex-row">
           <Button variant="danger" style={{width: '100px'}} className="m-1" onClick={() => {router.push(`/`) }}>Back</Button>
-          <Button variant="danger" style={{width: '100px'}} className="m-1" disabled={disableBtn}
-              onClick={() => {
-                handleRent();
-              }}>Rent</Button>
+          <Button variant="danger" style={{width: '100px'}} className="m-1" disabled={disableBtn} onClick={() => { handleRent(); }}>Rent</Button>
         </div>
       </Card.Body>
     </Card>
