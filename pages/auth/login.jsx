@@ -32,7 +32,6 @@ export default function Login() {
     });
     localStorage.setItem("token", data.login.token);
     }
-    console.log(data)
   }, [data]);
 
   useEffect(() => {
@@ -42,7 +41,6 @@ export default function Login() {
         button: "close",
       })
     }
-    console.log(error);
   }, [error]);
 
 async function handleSubmit() {

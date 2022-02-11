@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
 import style from "../styles/ListBook.module.css";
 import {faBook} from "react-icons/fa";
 import HeadApp from "../components/Head";
@@ -12,10 +11,6 @@ function ListBook() {
 
   const router = useRouter();
   const listAllBook = useSelector(({listAllBook}) => listAllBook)
-
-  useEffect(() => {
-    console.log(listAllBook)
-  }, [listAllBook]);
 
   return (
     <>
