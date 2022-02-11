@@ -8,7 +8,7 @@ module.exports = {
   async rewrites() {
     return [
       {
-        source: '/',
+        source: '/login',
         destination: '/auth/login'
       },
       {

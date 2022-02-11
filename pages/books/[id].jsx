@@ -29,10 +29,11 @@ function DetailBook() {
         <Card.Text>
           ISBN : {listBook[id]["isbn"]}
         </Card.Text>
-        <div className="mt-auto">
+        <div className="mt-auto d-flex flex-row">
           <Button variant="danger" style={{width: '100px'}} className="m-1" onClick={() => {router.push(`/`)
-      }}>Go Back</Button>
-          <Button variant="danger" style={{width: '100px'}} className="m-1">Start Rend</Button>
+      }}>Back</Button>
+          <Button variant="danger" style={{width: '100px'}} className="m-1" onClick={() => {router.push(`/login`)
+      }}>Rent</Button>
         </div>
       </Card.Body>
     </Card>
