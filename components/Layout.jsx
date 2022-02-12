@@ -55,10 +55,6 @@ function Layout({children}) {
     }
   }, [error]);
 
-  // useEffect(() => {
-  //   dispatch(allStore.findAllBook());
-  // }, [dispatch]);
-
   return (
     <>
       <HeadApp />
