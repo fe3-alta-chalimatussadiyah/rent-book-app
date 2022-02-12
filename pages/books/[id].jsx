@@ -17,8 +17,33 @@ mutation Mutation($bookId: Int) {
     returnDate
     message
     status
+    Book {
+      id
+      title
+      isbn
+      author
+      image_url
+    }
   }
 }
+`;
+
+const LIST_RENT = gql`
+  query Query {
+    findAllRent {
+      id
+      UserId
+      BookId
+      returnDate
+      Book {
+        id
+        title
+        isbn
+        author
+        image_url
+      }
+    }
+  }
 `;
 
 function DetailBook() {
@@ -33,7 +58,11 @@ function DetailBook() {
   const {id} = router.query;
   const listBook = useSelector(({listAllBook}) => listAllBook);
 
-  const [rentBook, { data, loading, error }] = useMutation(RENT_BOOK);
+  const { error: errorListRent } = useQuery(LIST_RENT);
+
+  const [rentBook, { data, loading, error }] = useMutation(RENT_BOOK, {
+    refetchQueries: [LIST_RENT, "findAllRent"],
+  });
 
   useEffect(() => {
     const book = listBook.find((el) => el.id == id);
@@ -63,7 +92,14 @@ function DetailBook() {
         button: "close",
       })
     }
-  }, [error]);
+
+  if (errorListRent && errorListRent.graphQLErrors.length > 0) {
+    setShow(true);
+    swal("Oops!", (errorListRent.graphQLErrors[0].message), "error", {
+      button: "close",
+    })
+  }
+}, [error, errorListRent]);
 
   async function handleRent() {
     try {
