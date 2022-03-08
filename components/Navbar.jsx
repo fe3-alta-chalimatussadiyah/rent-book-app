@@ -3,6 +3,7 @@ import Image from "next/image";
 import navicon from "../assets/nav.png";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import {FaUserCircle} from "react-icons/fa"
 
 export default function NavbarApp() {
   const router = useRouter();
@@ -16,7 +17,7 @@ export default function NavbarApp() {
           <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">  
             <Nav>
               <Link href="/login">
-                <a className="m-3">Login</a>
+                <a className="m-3"><FaUserCircle style={{height: "30px", width: "30px"}}/></a>
               </Link>    
             </Nav>
           <style global jsx>
