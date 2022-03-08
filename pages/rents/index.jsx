@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Card, Button, Spinner } from "react-bootstrap";
 import { gql, useQuery, useMutation } from "@apollo/client";
 import { useDispatch } from "react-redux";
+import { FaBook } from "react-icons/fa";
 import Link from "next/link";
 import swal from "sweetalert";
 
@@ -106,22 +107,23 @@ export default function Rent() {
   }
 
   if (listRent.length === 0) {
-    return <></>
+    return(
+    <div className="flex justify-content-center align-items-center" style={{position: 'absolute', top: '50%', left: '35%'}}>
+      <h3>Oopss.. you haven't rented a book ^_^</h3>
+    </div>
+    )
   }
-
-  console.log(listRent, "listRent");
-  console.log(dataListRent, "dataListRent");
 
   return (
     <>
-      <h3 className="text-center my-4"><faBook />List Rent Book</h3>
+      <h3 className="text-center my-4"><FaBook />List Rent Book</h3>
       <div className="d-flex flex-row flex-wrap justify-content-around mt-3">
 
     <>
       {listRent.map((el, i) => (
         <>
       <Card style={{width: '40%'}} className="d-flex flex-row border-0 mx-2 my-3">
-        <Card.Img variant="top" src={el.Book.image_url} style={{height: '300px'}} />
+        <Card.Img variant="top" src={el.Book.image_url} style={{height: '500px'}} />
 
         <Card.Body className="d-flex flex-column">
           <Card.Title>{el.Book.title}</Card.Title>
@@ -129,7 +131,7 @@ export default function Rent() {
           <Card.Text>
             ISBN : {el.Book.isbn}
           </Card.Text>
-            <Button variant="danger" style={{width: '100px'}} className="m-1 mt-auto" onClick={() => { handleReturnBook(el.id); }}>Renturn</Button>
+            <Button variant="danger" style={{width: '100px'}} className="m-1" onClick={() => { handleReturnBook(el.id); }}>Renturn</Button>
         </Card.Body>
       </Card>
       </>

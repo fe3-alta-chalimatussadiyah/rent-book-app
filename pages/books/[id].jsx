@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { useDispatch } from "react-redux";
 import { useMutation, useQuery, gql } from "@apollo/react-hooks";
+import { FaBook } from "react-icons/fa"
 import allStore from "../../store/actions";
 import Link from "next/link";
 import swal from "sweetalert";
@@ -118,7 +119,7 @@ function DetailBook() {
 
   return (
     <>
-    <h3 className="text-center my-4"><faBook />Detail Book</h3>
+    <h3 className="text-center my-4"><FaBook />Detail Book</h3>
     <div className="d-flex flex-row flex-wrap justify-content-around mt-3">
 
     <Card style={{width: '40%'}} className="d-flex flex-row border-0 mx-2 my-3">
